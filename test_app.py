@@ -80,7 +80,20 @@ class TestOrientationChatbot(unittest.TestCase):
         mock_faiss.from_texts.assert_called_once_with(["chunk1"], embedding="mock_embeddings")
         mock_store.save_local.assert_called_once()  # Verify that save_local was called
 
-    
+    @patch('app.GoogleGenerativeAI')  # Mock the LLM class
+    def test_generate_response(self, mock_llm):
+        # Simulate the LLM generating a response
+        mock_llm.return_value.run.return_value = "This is a response."
+        docs = ["doc1", "doc2"]  # Sample documents
+        query = "What is this?"  # Sample query
+
+        # Call the function to generate a response
+        response = generate_response(mock_llm, docs, query)
+
+        # Assert that the response matches the expected output
+        self.assertEqual(response, "This is a response.")
+        mock_llm.return_value.run.assert_called_once()  # Verify that run was called
+
 # Run the tests when the script is executed
 if __name__ == '__main__':
     unittest.main()
