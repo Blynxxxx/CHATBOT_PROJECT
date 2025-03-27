@@ -71,3 +71,37 @@ def create_vector_store(pdf_path, chunks, embeddings):
 def get_user_query():
     """Get the user query from Streamlit input."""
     return st.text_input("💬 Ask a question about Orientation:")
+
+
+def generate_response(llm, docs, query):
+    """Generate a response to the user query."""
+    prompt = (
+        f"You are a James Cook University Koalion and you are here to help Q&A regarding orientation information for new students."
+        f"Based on the given information and text, answer the question: '{query}' in detail."
+    )
+    
+    chain = load_qa_chain(llm=llm, chain_type="stuff")
+
+    if docs:
+        response = chain.run(input_documents=docs, question=prompt)
+        negative_indicators = [
+            "not contain information",
+            "the text only mentions",
+            "no relevant information",
+            "unable to answer",
+            "not found",
+            "does not provide",
+            "don't know ",
+            "sorry"
+        ]
+        
+        if not response or any(indicator in response.lower() for indicator in negative_indicators):
+            prompt = (
+                f"You are a James Cook University Koalion. Answer the following question based on general knowledge: '{query}'. "
+                "If you cannot find specific information, provide a helpful response using information form the internet."
+            )
+            response = llm.invoke(prompt)
+    else:
+        response = llm.invoke(prompt)
+
+    return response
