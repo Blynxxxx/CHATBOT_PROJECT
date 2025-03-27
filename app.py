@@ -38,4 +38,12 @@ def extract_text_from_pdf(pdf_path):
     except Exception as e:
         st.error(f"Error reading PDF: {e}")
     return text.strip()
-        
+
+def split_text(text):
+    """Split text into chunks."""
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=1000, 
+        chunk_overlap=300, 
+        length_function=len
+    )
+    return text_splitter.split_text(text=text)        
