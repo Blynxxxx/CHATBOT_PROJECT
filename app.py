@@ -46,4 +46,12 @@ def split_text(text):
         chunk_overlap=300, 
         length_function=len
     )
-    return text_splitter.split_text(text=text)        
+    return text_splitter.split_text(text=text)
+
+def initialize_embeddings():
+    """Initialize Google Gemini embeddings."""
+    try:
+        return GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=gemini_api_key)
+    except Exception as e:
+        st.error(f"Error initializing embeddings: {e}")
+        return None
