@@ -39,7 +39,17 @@ class TestOrientationChatbot(unittest.TestCase):
         # Assert that the output is as expected (the original text in this case)
         self.assertEqual(chunks, ["This is a test text that needs to be split into chunks."])
 
-    
+    @patch('app.GoogleGenerativeAIEmbeddings')  # Mock the embeddings class
+    @patch('app.os.getenv')  # Mock the environment variable retrieval
+    def test_initialize_embeddings(self, mock_getenv, mock_embeddings):
+        # Simulate getting an API key from environment variables
+        mock_getenv.return_value = "fake_api_key"
+        embeddings = initialize_embeddings()
+        
+        # Assert that the embeddings are initialized and not None
+        self.assertIsNotNone(embeddings)
+
+
 
 # Run the tests when the script is executed
 if __name__ == '__main__':
