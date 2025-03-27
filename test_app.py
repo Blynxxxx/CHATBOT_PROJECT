@@ -49,8 +49,38 @@ class TestOrientationChatbot(unittest.TestCase):
         # Assert that the embeddings are initialized and not None
         self.assertIsNotNone(embeddings)
 
+    @patch('app.FAISS')  # Mock the FAISS vector store
+    @patch('app.os.path.exists')  # Mock checking if a file exists
+    def test_create_vector_store_existing(self, mock_exists, mock_faiss):
+        # Simulate that the vector store already exists
+        mock_exists.return_value = True
+        mock_store = MagicMock()
+        mock_faiss.load_local.return_value = mock_store
 
+        # Call the function to create or load the vector store
+        vector_store = create_vector_store("dummy_path.pdf", ["chunk1"], "mock_embeddings")
 
+        # Assert that the loaded vector store is returned
+        self.assertEqual(vector_store, mock_store)
+        mock_faiss.load_local.assert_called_once()  # Verify that load_local was called
+
+    @patch('app.FAISS')  # Mock the FAISS vector store again
+    @patch('app.os.path.exists')  # Mock checking if a file exists
+    def test_create_vector_store_new(self, mock_exists, mock_faiss):
+        # Simulate that the vector store does not exist
+        mock_exists.return_value = False
+        mock_store = MagicMock()
+        mock_faiss.from_texts.return_value = mock_store
+
+        # Call the function to create a new vector store
+        vector_store = create_vector_store("dummy_path.pdf", ["chunk1"], "mock_embeddings")
+
+        # Assert that the new vector store is created and saved
+        self.assertEqual(vector_store, mock_store)
+        mock_faiss.from_texts.assert_called_once_with(["chunk1"], embedding="mock_embeddings")
+        mock_store.save_local.assert_called_once()  # Verify that save_local was called
+
+    
 # Run the tests when the script is executed
 if __name__ == '__main__':
     unittest.main()
