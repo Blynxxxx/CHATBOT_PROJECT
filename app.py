@@ -55,3 +55,15 @@ def initialize_embeddings():
     except Exception as e:
         st.error(f"Error initializing embeddings: {e}")
         return None
+
+def create_vector_store(pdf_path, chunks, embeddings):
+    """Create or load a vector store."""
+    store_name = os.path.basename(pdf_path).replace('.pdf', '')
+    store_path = f"vector_stores/{store_name}"
+
+    if os.path.exists(store_path):
+        return FAISS.load_local(store_path, embeddings, allow_dangerous_deserialization=True)
+    else:
+        vector_store = FAISS.from_texts(chunks, embedding=embeddings)
+        vector_store.save_local(store_path)
+        return vector_store
