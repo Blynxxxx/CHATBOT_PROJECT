@@ -105,3 +105,33 @@ def generate_response(llm, docs, query):
         response = llm.invoke(prompt)
 
     return response
+
+
+def main():
+    initialize_sidebar()
+    st.title("📚 Orientation Chatbot")
+
+    pdf_path = 'data/database.pdf'  # Update file path if needed
+
+    if os.path.exists(pdf_path):
+        text = extract_text_from_pdf(pdf_path)
+        chunks = split_text(text)
+        
+        embeddings = initialize_embeddings()
+        if embeddings is None:
+            return
+
+        vector_store = create_vector_store(pdf_path, chunks, embeddings)
+        query = get_user_query()
+
+        if query:
+            with st.spinner("Finding information..."):
+                docs = vector_store.similarity_search(query=query, k=5)
+                llm = GoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.2, google_api_key=gemini_api_key)
+                response = generate_response(llm, docs, query)
+
+                # Display response with background
+                st.markdown(f'<div style="background-color:#f4f4f4;padding:10px;border-radius:10px;">{response}</div>', unsafe_allow_html=True)
+
+if __name__ == '__main__':
+    main()
