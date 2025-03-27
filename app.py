@@ -67,3 +67,7 @@ def create_vector_store(pdf_path, chunks, embeddings):
         vector_store = FAISS.from_texts(chunks, embedding=embeddings)
         vector_store.save_local(store_path)
         return vector_store
+
+def get_user_query():
+    """Get the user query from Streamlit input."""
+    return st.text_input("💬 Ask a question about Orientation:")
