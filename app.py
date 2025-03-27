@@ -25,4 +25,17 @@ def initialize_sidebar():
         ''')
         add_vertical_space(5)
         st.write('Created by Group-8')
+
+def extract_text_from_pdf(pdf_path):
+    """Extract text from a PDF file."""
+    text = ""
+    try:
+        pdf_reader = PdfReader(pdf_path)
+        for page in pdf_reader.pages:
+            extracted_text = page.extract_text()
+            if extracted_text:
+                text += extracted_text.replace("\n", " ") + " "
+    except Exception as e:
+        st.error(f"Error reading PDF: {e}")
+    return text.strip()
         
