@@ -77,7 +77,6 @@ def chat():
         print(f"❌ Error processing FAQ query: {e}")
         return jsonify({"response": "An error occurred while processing your request."})
 
-
 @app.route("/submit_feedback", methods=["POST"])
 def submit_feedback():
     try:
@@ -102,8 +101,6 @@ def submit_feedback():
     except Exception as e:
         print(f"❌ Error in submit_feedback: {e}")
         return jsonify({"status": "error", "message": f"Internal Server Error: {e}"}), 500
-
-
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

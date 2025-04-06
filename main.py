@@ -62,6 +62,36 @@ def translate_text(text, source_language, target_language):
 
 #########################################################################
 
+# Function to handle message sending to the backend
+def send_message_to_backend(message, user_language, chat_history=None):
+    try:
+        # If not in English, translate into English first
+        if user_language != "en":
+            translated_message = translate_text(message, user_language, "en")
+        else:
+            translated_message = message
+
+        payload = {
+            "message": translated_message,
+            "language": user_language
+        }
+
+        if chat_history:
+            payload["chat_history"] = chat_history
+        
+        response = requests.post("http://127.0.0.1:5000/chat", json=payload)
+
+        response.raise_for_status()
+        data = response.json()
+    except requests.exceptions.RequestException as e:
+        return f"❌ Server Error: {str(e)}"
+    except requests.exceptions.JSONDecodeError:
+        return "❌ Server Error: Invalid response format"
+    
+    english_response = data.get("response", "⚠️ AI could not provide a suitable answer")
+    
+    return translate_text(english_response, "en", user_language) if user_language != "en" else english_response
+
 def display_message(role, content):
     with st.chat_message(role):
         st.markdown(content)
@@ -91,10 +121,6 @@ def handle_input(input_content):
     # Use send_message_to_backend(), deliver detected_language.
     chatbot_response = send_message_to_backend(input_content, detected_language, chat_history)
 
-
-    # Use send_message_to_backend(), deliver detected_language.
-    chatbot_response = send_message_to_backend(input_content, detected_language, chat_history)
-
     # Record AI Answer
     st.session_state.messages.append({"role": "assistant", "content": chatbot_response})
     st.rerun()
@@ -102,8 +128,8 @@ def handle_input(input_content):
 # Display conversation history
 for message in st.session_state.messages:
     role = get_text("user") if message["role"] == "user" else get_text("assistant")
-    display_message(role, message["content"])  
-      
+    display_message(role, message["content"])
+
 quick_faqs = {
     "en": {
         "When is the orientation for full time and part time?":
@@ -132,6 +158,7 @@ quick_faqs = {
             "詹姆斯库克大学新加坡校区（JCUS）是詹姆斯库克大学澳大利亚的海外分校，位于新加坡Sims Drive，提供商科、IT、心理学、理科、教育等课程，并致力于通过高质量教学和全面学生支持服务促进学生发展。"
     }
 }
+
 # Render quick buttons with fixed answers
 st.markdown(f"### {get_text('quick_questions')}")
 lang_code = "zh" if st.session_state.language == "中文" else "en"
