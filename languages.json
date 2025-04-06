@@ -1,0 +1,57 @@
+{
+    "English": {
+      "app_title": "JCU Orientation Chatbot 🎈",
+      "quick_questions": "Quick Questions",
+      "settings": "Settings",
+      "theme": "Theme",
+      "model": "Model",
+      "send": "Send",
+      "message_placeholder": "Type your message here...",
+      "ai_thinking": "AI is thinking...",
+      "chat_history": "Chat History",
+      "user": "User",
+      "assistant": "Assistant",
+      "light": "Light",
+      "dark": "Dark",
+      "search_placeholder": "Search messages...",
+      "no_results": "No results found for",
+      "empty_chat": "Empty chat",
+      "help": "Help",
+      "feedback": "Feedback",
+      "chat_placeholder": "Type your message...",
+      "show_more": "Show More",
+      "When is the orientation for full time and part time?": "When is the orientation for full time and part time?",
+    "Compulsory documents for Student Pass Formalities?": "Compulsory documents for Student Pass Formalities?",
+    "What do I need to prepare for orientation?": "What do I need to prepare for orientation?",
+    "About James Cook University Singapore": "About James Cook University Singapore"
+
+      
+    },
+    "中文": {
+      "app_title": "JCU 迎新智能助手 🎈",
+      "quick_questions": "快捷提问",
+      "settings": "设置",
+      "theme": "主题",
+      "model": "模型",
+      "send": "发送",
+      "message_placeholder": "请输入您的消息...",
+      "ai_thinking": "AI 正在思考...",
+      "chat_history": "历史记录",
+      "user": "用户",
+      "assistant": "助手",
+      "light": "浅色",
+      "dark": "深色",
+      "search_placeholder": "搜索消息...",
+      "no_results": "未找到相关结果",
+      "empty_chat": "空对话",
+      "help": "帮助",
+      "feedback": "反馈",
+      "chat_placeholder": "输入您的消息...",
+      "show_more": "显示更多",
+      "When is the orientation for full time and part time?": "全日制与非全日制学生的迎新会时间？",
+    "Compulsory documents for Student Pass Formalities?": "学生准证手续需要哪些材料？",
+    "What do I need to prepare for orientation?": "迎新会前需要准备什么？",
+    "About James Cook University Singapore": "关于詹姆斯库克大学新加坡校区"
+    }
+  }
+  
