@@ -102,8 +102,8 @@ def handle_input(input_content):
 # Display conversation history
 for message in st.session_state.messages:
     role = get_text("user") if message["role"] == "user" else get_text("assistant")
-    display_message(role, message["content"])    
-
+    display_message(role, message["content"])  
+      
 quick_faqs = {
     "en": {
         "When is the orientation for full time and part time?":
@@ -132,7 +132,6 @@ quick_faqs = {
             "詹姆斯库克大学新加坡校区（JCUS）是詹姆斯库克大学澳大利亚的海外分校，位于新加坡Sims Drive，提供商科、IT、心理学、理科、教育等课程，并致力于通过高质量教学和全面学生支持服务促进学生发展。"
     }
 }
-
 # Render quick buttons with fixed answers
 st.markdown(f"### {get_text('quick_questions')}")
 lang_code = "zh" if st.session_state.language == "中文" else "en"
