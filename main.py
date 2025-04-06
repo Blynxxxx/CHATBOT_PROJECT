@@ -85,12 +85,24 @@ def handle_input(input_content):
     else:  # Default to English if not any of the above
         detected_language = "en"
 
+    # Get the last 10 chats and prevent errors when they are empty.
+    chat_history = st.session_state.messages[-10:] if st.session_state.messages else []
+
+    # Use send_message_to_backend(), deliver detected_language.
+    chatbot_response = send_message_to_backend(input_content, detected_language, chat_history)
+
+
     # Use send_message_to_backend(), deliver detected_language.
     chatbot_response = send_message_to_backend(input_content, detected_language, chat_history)
 
     # Record AI Answer
     st.session_state.messages.append({"role": "assistant", "content": chatbot_response})
     st.rerun()
+
+# Display conversation history
+for message in st.session_state.messages:
+    role = get_text("user") if message["role"] == "user" else get_text("assistant")
+    display_message(role, message["content"])    
 
 quick_faqs = {
     "en": {
