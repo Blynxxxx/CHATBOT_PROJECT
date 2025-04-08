@@ -53,3 +53,17 @@ The features of Orientation AI Assitiant Project consist of:
 ## Data and Privacy
 The chatbot will be trained on data provided by the Student Affairs department, including orientation schedules, event descriptions, and FAQs. 
 All data will be handled with strict adherence to privacy regulations, ensuring that student information and interactions remain confidential.
+
+# Desgin
+## App Basic Architecture
+
+## UML Class Diagram 
+
+## UML Sequence Diagram 
+
+## Database Design
+
+# Implementation/Code
+
+# Testing
+
