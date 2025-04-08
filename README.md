@@ -1,4 +1,4 @@
-# CP3407 Orientation AI Assistant Project 
+# CP3407 Orientation AI Assistant Project 🤖
 This project is created by Group-8.<br>
 Team members: Bao Linh Van, Yunqiu Zhu, Vincent Thendean, and Cao Shaung Li <br>
 **Weekly workshops**: https://docs.google.com/document/d/1hSm7TEy8SbGbZT-J8jzUGchv5jHCJfkhwtOCgqO67co/edit?usp=sharing <br>
@@ -18,4 +18,38 @@ The features of Orientation AI Assitiant Project consist of:
 - Interative Suggestions: Recommend games, interactive activities, team-building exercises, and group discussions to encourage socialization among students
 - Feedback Collection: Collect feedback on the chatbot’s performance to enhance future iterations and use it to improve the orientation program
 ## Technology Stack
+### Frontend
+- **Streamlit**: A Python library for creating interactive web applications with minimal effort.
+- **Flask**: A lightweight WSGI web application framework for serving APIs and handling backend logic.
 
+### Backend
+- **Programming Language**: 
+  - **Python**: A versatile choice for backend development, utilized throughout the stack.
+- **Streamlit**: Serves as both the frontend and backend, simplifying application architecture and enabling quick deployment.
+
+### AI/NLP
+- **Chatbot Service**:
+  - **Claude API**: For natural language processing and generating responses.
+  - **Gemini API**: For AI embeddings, enhancing contextual understanding.
+
+- **Translation**:
+  - **Google Translate Library**: Imported into Python to translate responses to different languages using the `googletrans` method.
+  
+- **Vectorstore**:
+  - **FAISS**: For efficient similarity search and clustering of embeddings.
+  - **LangChain**: Facilitates the integration of LLMs (like Gemini) with various data sources and manages conversational flows effectively.
+
+- **Prompt Engineering**:
+  - **Model Training**: Develop effective prompts to enhance the model's understanding and response capabilities.
+  - **Query Optimization**: Dynamically adjust prompts based on conversation context to improve relevance and accuracy.
+
+### Database
+- **MongoDB**: A NoSQL database used to store orientation information and user feedback.
+
+### Version Control
+- **Git**: For version control, enabling tracking of changes and collaboration.
+- **GitHub**: For repository hosting and collaboration, facilitating team workflows and open-source contributions.
+  
+## Data and Privacy
+The chatbot will be trained on data provided by the Student Affairs department, including orientation schedules, event descriptions, and FAQs. 
+All data will be handled with strict adherence to privacy regulations, ensuring that student information and interactions remain confidential.
