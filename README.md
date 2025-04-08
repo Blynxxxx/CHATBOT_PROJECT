@@ -58,11 +58,11 @@ All data will be handled with strict adherence to privacy regulations, ensuring 
 ## App Basic Architecture
 
 ## UML Class Diagram 
-
+![UML Class Diagram](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/UML_Class_Diagram.jpg)
 ## UML Sequence Diagram 
-
+![UML Sequence Diagram](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/UML_Sequence_Diagram.jpg)
 ## Database Design
-
+![Database Design](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Database_Diagram.jpg)
 # Implementation/Code
 
 # Testing
