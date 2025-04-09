@@ -64,6 +64,13 @@ All data will be handled with strict adherence to privacy regulations, ensuring 
 ## Database Design
 ![Database Design](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Database_Diagram.jpg)
 # Implementation/Code
-
+## Iteration 1
+![Iteration 1](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Iteration%201.jpg)
+![Iteration 1: team velocity, feedback, calculated velocity for Iteration 2](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Iteration%201%20Description.jpg)
+## Iteration 2
+![Iteration 2](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Iteration%202.jpg)
+![Iteration 2: team velocity, feedback, calculated velocity for Iteration 3](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Iteration%202%20Description.jpg)
+## Iteration 3
+![Iteration 3](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Iteration%203.jpg)
 # Testing
 
