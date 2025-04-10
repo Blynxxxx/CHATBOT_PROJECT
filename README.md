@@ -88,6 +88,7 @@ The design is minimalistic yet functional, featuring a user-friendly layout that
 
 ## UML Class Diagram 
 ![UML Class Diagram](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/UML_Class_Diagram.jpg)
+This diagram provides a clear overview of the chatbot system’s architecture. It visually maps out how different components—such as the **frontend (Streamlit), backend (Flask), FAQ generation module, embedding process, and MongoDB** database—work together. The diagram helps illustrate the main data flow: a user sends a question through the frontend, the backend receives it and forwards it to the FAQ module, which either retrieves an answer from the database or uses vector search and a language model to generate a response. It also shows how files are uploaded and processed into embeddings, which are stored for future reference. The overall workflow depicted in the diagram starts from user interaction, flows through the backend to data processing and storage, and returns a response—demonstrating how information is passed through the system in a modular and structured way.
 ## UML Sequence Diagram 
 ![UML Sequence Diagram](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/UML_Sequence_Diagram.jpg)
 ## Database Design
