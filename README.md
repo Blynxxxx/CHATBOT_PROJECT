@@ -55,7 +55,7 @@ The chatbot will be trained on data provided by the Student Affairs department, 
 All data will be handled with strict adherence to privacy regulations, ensuring that student information and interactions remain confidential.
 
 # Desgin
-## Chatbot UI Component
+## Chatbot Hi-Fi Prototype
 ![Chatbot UI](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Chatbot%20UI.jpg)
 
 The Chatbot UI component is designed to enhance user interaction through a clean and intuitive interface, specifically tailored for new students arriving at JCU Singapore. It serves as a virtual assistant, providing essential information and support related to the JCU Orientation, helping students navigate their new environment with ease.
