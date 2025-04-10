@@ -105,4 +105,52 @@ This ER diagram presents a simplified view of the database structure used in the
 ## Iteration 3
 ![Iteration 3](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Iteration%203.jpg)
 # Testing
+## System Testing Result Documentation
 
+### 1. Introduction
+The purpose of this system testing plan is to detail the approach and methodology for testing the CHAT BOT project, ensuring that it meets the functional and performance requirements in both Chinese and English.
+
+### 2. Scope
+The testing will cover:
+- Functionality of responses to user inputs.
+- Usability and user experience in both Chinese and English.
+- The user interface and response time of the chatbot.
+
+### 3. Test Summary
+
+| Test Type            | Total Tests | Passed | Failed          | Not Executed |
+|----------------------|-------------|--------|------------------|--------------|
+| Functional Testing    | 20          | 20     | 0                | 0            |
+| Performance Testing   | 10          | 6      | 3                | 0            |
+| Usability Testing      | 10          | 10     | 0                | 0            |
+
+### 4. Detailed Test Results
+
+#### 4.1 Functional Testing Results
+
+| Test Case ID | Description                                                   | Expected Result                               | Actual Result                               | Status | Comments |
+|---------------|---------------------------------------------------------------|----------------------------------------------|---------------------------------------------|--------|----------|
+| TC001         | (7 tests) Construct queries using the information stored in the database. | Accurate response aligned with database      | Correct response consistent with the database | Pass   |          |
+| TC002         | (7 tests) Construct queries using information related to JCU that is not in the database. | Respond based on information available online about JCU. | Provide a response based on the information found online about JCU. | Pass   |          |
+| TC003         | (6 tests) Construct general queries not related to JCU.      | Respond based on information available online. | Provide a response based on the information found online. | Pass   |          |
+
+#### 4.2 Performance Testing Results
+
+| Test Case ID | Description            | Expected Result            | Actual Result                     | Status | Comments |
+|---------------|------------------------|----------------------------|------------------------------------|--------|----------|
+| TC004         | (1 test) Load Handling | Stable under load          | No crash, stable                  | Pass   |          |
+| TC005         | (9 tests) Response Time | < 10 seconds               | Sometimes longer than 10 seconds  | Fail   |          |
+
+#### 4.3 Usability Testing Results
+
+| Test Case ID | Description                | Expected Result                                          | Actual Result                                         | Status | Comments |
+|---------------|----------------------------|--------------------------------------------------------|------------------------------------------------------|--------|----------|
+| TC006         | (5 tests) User Interface Layout | Intuitive and easy to navigate, display history and suggest questions. | User-friendly layout; temporary history and suggested questions are displayed effectively. | Pass   |          |
+| TC007         | (5 tests) Interaction Flow  | Smooth and logical                                     | The responses are ordered chronologically.            | Pass   |          |
+
+### 5. Conclusion
+Overall, the chatbot offers a satisfactory user experience in both Chinese and English, featuring a user-friendly interface and reasonable response times. However, the response functionality could be improved, as it sometimes takes over 10 seconds to reply. Despite this, it meets customer needs adequately and is effective for its intended purpose.
+
+### 6. Recommendations
+- Concentrate on optimizing response times.
+- Test with multiple users simultaneously.
