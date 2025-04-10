@@ -97,12 +97,15 @@ This sequence diagram visualizes the full workflow of a user submitting a questi
 This ER diagram presents a simplified view of the database structure used in the chatbot system. It highlights the relationships between uploaded files, FAQs, vector embeddings, user feedback, and stored content in MongoDB GridFS. Each uploaded file is associated with metadata such as filename, file type, and upload time, and is linked to both the GridFS storage system and potential FAQ entries generated from its content. Files are also connected to vector indexes stored in the VectorStore collection, enabling efficient semantic search. Additionally, the diagram shows how users submit feedback, which is stored with timestamps. Overall, this diagram helps illustrate how the data is organized and how documents, embeddings, and user interactions are connected in the backend.
 # Implementation/Code
 ## Iteration 1
+In Iteration 1, the team completed the baseline functions for the chatbot, which include a basic chat UI, text extraction from documents, dividing text into smaller chunks, and using AI embeddings to convert these chunks into vectors. We also implemented testing throughout the process to adhere to best practices for test-driven development. The figures below illustrate the user stories and tasks for Iteration 1, along with the team’s velocity and feedback received from the customer.
 ![Iteration 1](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Iteration%201.jpg)
 ![Iteration 1: team velocity, feedback, calculated velocity for Iteration 2](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Iteration%201%20Description.jpg)
 ## Iteration 2
+In Iteration 2, we enhanced our chatbot based on customer feedback from Iteration 1. We added a temporary history feature, allowing users to view past messages and maintain a consistent conversation with the chatbot. Additionally, we introduced a multi-language option. The chatbot now not only provides information related to orientation but also responds to general questions. The figures below detail Iteration 2, including velocity and customer feedback.
 ![Iteration 2](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Iteration%202.jpg)
 ![Iteration 2: team velocity, feedback, calculated velocity for Iteration 3](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Iteration%202%20Description.jpg)
 ## Iteration 3
+In Iteration 3, we further debugged and improved our chatbot based on feedback from Iteration 2. In addition to the existing functionalities, we added two new features: a quick questions section and a feedback section. The figures below illustrate the overview of Iteration 3, team velocity, and customer feedback.
 ![Iteration 3](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Iteration%203.jpg)
 # Testing
 ## System Testing Result Documentation
