@@ -55,7 +55,36 @@ The chatbot will be trained on data provided by the Student Affairs department, 
 All data will be handled with strict adherence to privacy regulations, ensuring that student information and interactions remain confidential.
 
 # Desgin
-## App Basic Architecture
+## Chatbot UI Component
+![Chatbot UI](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Chatbot%20UI.jpg)
+
+The Chatbot UI component is designed to enhance user interaction through a clean and intuitive interface, specifically tailored for new students arriving at JCU Singapore. It serves as a virtual assistant, providing essential information and support related to the JCU Orientation, helping students navigate their new environment with ease.
+
+### Key Features
+
+#### Logo Display
+- Prominently features the JCU logo, establishing brand identity and trust.
+
+#### Multi-Language Support
+- Offers users the ability to choose their preferred language (Chinese or English), enhancing accessibility for a diverse audience.
+
+#### Chat Area
+- The main section where users can interact with the chatbot. It provides responsive answers to orientation-related queries and general information.
+
+#### Quick Questions Feature
+- To facilitate fast responses, a "Quick Questions" option allows students to click on common inquiries, ensuring they receive immediate assistance for frequently asked questions.
+
+#### Chat History
+- Users can view previous interactions, allowing for easy reference to past questions and responses, thus improving user experience.
+
+#### User Feedback and Settings
+- Includes options for feedback and settings adjustments, enabling users to customize their experience and communicate their thoughts on the chatbot's performance.
+
+#### Help Section
+- Provides additional assistance and resources for users, ensuring they have access to all necessary information.
+
+### Overall UI Design
+The design is minimalistic yet functional, featuring a user-friendly layout that guides users seamlessly through their inquiries. The use of clear typography and structured elements ensures that information is easily digestible, making it suitable for users seeking quick and efficient responses.
 
 ## UML Class Diagram 
 ![UML Class Diagram](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/UML_Class_Diagram.jpg)
