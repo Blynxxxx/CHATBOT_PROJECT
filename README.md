@@ -107,6 +107,8 @@ In Iteration 2, we enhanced our chatbot based on customer feedback from Iteratio
 ## Iteration 3
 In Iteration 3, we further debugged and improved our chatbot based on feedback from Iteration 2. In addition to the existing functionalities, we added two new features: a quick questions section and a feedback section. The figures below illustrate the overview of Iteration 3, team velocity, and customer feedback.
 ![Iteration 3](https://github.com/Blynxxxx/CHATBOT_PROJECT/blob/main/images/Iteration%203.jpg)
+## Final Product
+
 # Testing
 ## System Testing Result Documentation
 
